@@ -1,0 +1,596 @@
+/* ==========================
+   GOOGLE FONT & RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#ffd1ff);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#fff;
+    text-align:center;
+}
+
+/* Canvas */
+
+#confettiCanvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:999;
+}
+
+/* Floating Hearts Container */
+
+.hearts{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+    color:#fff;
+    text-shadow:0 0 15px rgba(255,255,255,.8);
+    animation:glow 2s infinite alternate;
+}
+
+.hero h2{
+    font-size:35px;
+    margin-bottom:20px;
+    color:#ffe066;
+}
+
+.subtitle{
+    max-width:700px;
+    line-height:1.8;
+    font-size:20px;
+    margin-bottom:35px;
+}
+
+/* Sections */
+
+section{
+    padding:80px 20px;
+    position:relative;
+    z-index:2;
+}
+
+.hidden{
+    display:none;
+}
+
+/* Buttons */
+
+button{
+    padding:15px 35px;
+    margin:12px;
+    border:none;
+    border-radius:40px;
+    background:#ff4f8b;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+button:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:#ff2e74;
+    box-shadow:0 12px 30px rgba(255,0,120,.45);
+}
+
+/* Music Button */
+
+#musicBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:1000;
+}
+
+/* Headings */
+
+h2{
+    font-size:42px;
+    margin-bottom:30px;
+    color:#fff;
+    text-shadow:0 0 10px rgba(255,255,255,.6);
+}
+
+/* Paragraph */
+
+p{
+    font-size:18px;
+    line-height:1.8;
+    margin:15px auto;
+    max-width:800px;
+}
+
+/* Glow Animation */
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+        0 0 10px white,
+        0 0 20px pink;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px white,
+        0 0 40px hotpink,
+        0 0 60px deeppink;
+    }
+
+}
+
+/* Fade Up */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.hero,
+section{
+    animation:fadeUp 1s ease;
+}
+/* ==========================
+   PART 2 - CAKE, CANDLES &
+   FLOATING HEARTS
+========================== */
+
+/* Cake Section */
+
+#cakeSection{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Cake */
+
+.cake{
+    position:relative;
+    width:260px;
+    height:260px;
+    margin:40px auto;
+}
+
+/* Plate */
+
+.plate{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:280px;
+    height:18px;
+    background:#ececec;
+    border-radius:50px;
+    box-shadow:0 5px 12px rgba(0,0,0,.25);
+}
+
+/* Cake Layers */
+
+.layer{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:12px;
+    box-shadow:0 8px 15px rgba(0,0,0,.15);
+}
+
+.layer-bottom{
+    width:220px;
+    height:70px;
+    bottom:18px;
+    background:#ffb347;
+}
+
+.layer-middle{
+    width:180px;
+    height:60px;
+    bottom:88px;
+    background:#ff8fab;
+}
+
+.layer-top{
+    width:140px;
+    height:50px;
+    bottom:148px;
+    background:#ffc6ff;
+}
+
+/* Icing */
+
+.icing{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:188px;
+    width:150px;
+    height:18px;
+    background:white;
+    border-radius:20px;
+}
+
+/* Icing Drips */
+
+.drip{
+    position:absolute;
+    background:white;
+    border-radius:20px;
+}
+
+.drip1{
+    width:16px;
+    height:35px;
+    left:96px;
+    bottom:165px;
+}
+
+.drip2{
+    width:14px;
+    height:28px;
+    left:122px;
+    bottom:172px;
+}
+
+.drip3{
+    width:18px;
+    height:42px;
+    left:150px;
+    bottom:158px;
+}
+
+/* Candles */
+
+.candles{
+    position:absolute;
+    bottom:205px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:20px;
+}
+
+.candle{
+    width:12px;
+    height:45px;
+    background:#ffffff;
+    border-radius:5px;
+    position:relative;
+}
+
+/* Flame */
+
+.flame{
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:14px;
+    height:20px;
+    background:gold;
+    border-radius:50% 50% 50% 50%;
+    animation:flicker .4s infinite alternate;
+    box-shadow:0 0 12px gold;
+}
+
+/* Flame Animation */
+
+@keyframes flicker{
+
+    from{
+        transform:translateX(-50%) scale(1);
+        opacity:1;
+    }
+
+    to{
+        transform:translateX(-50%) scale(.8);
+        opacity:.7;
+    }
+
+}
+
+/* Blow Out Animation */
+
+.flame.out{
+    animation:none;
+    opacity:0;
+    transform:translateX(-50%) scale(0);
+    transition:.6s;
+}
+
+/* Cake Floating */
+
+.cake{
+    animation:cakeFloat 3s ease-in-out infinite;
+}
+
+@keyframes cakeFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* Floating Hearts */
+
+.hearts::before,
+.hearts::after{
+    content:"💖 💕 💗 💘 ❤️ 💝 💓";
+    position:absolute;
+    font-size:28px;
+    white-space:nowrap;
+    animation:heartFloat 18s linear infinite;
+    opacity:.7;
+}
+
+.hearts::after{
+    animation-duration:24s;
+    animation-delay:-8s;
+    top:40%;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:translateX(-120%);
+    }
+
+    100%{
+        transform:translateX(120vw);
+    }
+
+}
+
+/* Cake Button Spacing */
+
+#blowBtn,
+#wishBtn{
+    margin-top:20px;
+}
+/* ==========================
+   PART 3 - GALLERY, LOVE LETTER,
+   FOOTER & RESPONSIVE DESIGN
+========================== */
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.gallery-container img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    border:4px solid rgba(255,255,255,.4);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transition:.4s;
+}
+
+.gallery-container img:hover{
+    transform:scale(1.06) rotate(2deg);
+    box-shadow:0 15px 35px rgba(255,20,147,.45);
+}
+
+/* ==========================
+   LOVE LETTER
+========================== */
+
+.letter{
+    max-width:750px;
+    margin:40px auto;
+    padding:35px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.3);
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
+}
+
+.letter p{
+    margin-bottom:18px;
+    font-size:19px;
+    line-height:1.9;
+}
+
+.letter h3{
+    margin-top:30px;
+    color:#ffe066;
+    font-size:28px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    margin-top:60px;
+    padding:25px;
+    background:rgba(0,0,0,.18);
+}
+
+footer p{
+    font-size:17px;
+    color:#fff;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ffd6e7;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff4f8b;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff2e74;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:768px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero h2{
+        font-size:26px;
+    }
+
+    .subtitle{
+        font-size:17px;
+        padding:0 10px;
+    }
+
+    h2{
+        font-size:32px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    button{
+        width:90%;
+        max-width:300px;
+        font-size:17px;
+    }
+
+    .cake{
+        transform:scale(.85);
+    }
+
+    .gallery-container{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-container img{
+        height:250px;
+    }
+
+    .letter{
+        margin:20px;
+        padding:25px;
+    }
+
+    .letter h3{
+        font-size:24px;
+    }
+
+    #musicBtn{
+        right:15px;
+        bottom:15px;
+        width:auto;
+        padding:12px 18px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    .cake{
+        transform:scale(.72);
+    }
+
+    .letter{
+        padding:20px;
+    }
+
+    .letter p{
+        font-size:16px;
+    }
+
+}
+
+/* ==========================
+   END
+========================== */
